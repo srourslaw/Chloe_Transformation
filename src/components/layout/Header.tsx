@@ -1,4 +1,4 @@
-import { Download, Calendar, Settings, FileText, FileSpreadsheet, Presentation, Menu } from 'lucide-react';
+import { Download, Calendar, Settings, FileText, FileSpreadsheet, Presentation, Menu, Shield } from 'lucide-react';
 import { format } from 'date-fns';
 
 interface HeaderProps {
@@ -89,6 +89,11 @@ Contact: Chloe Transformation Team`;
     alert('Settings panel coming soon! This will include:\n\n• Dashboard preferences\n• Export options\n• User settings\n• Theme selection\n• Data refresh intervals');
   };
 
+  const handleLogout = () => {
+    sessionStorage.removeItem('dashboard_authenticated');
+    window.location.reload();
+  };
+
   return (
     <header className="border-b border-secondary-200 bg-white px-6 py-4">
       <div className="flex items-center justify-between">
@@ -141,6 +146,15 @@ Contact: Chloe Transformation Team`;
           </div>
 
           <div className="hidden sm:block h-6 w-px bg-secondary-200" />
+
+          <button
+            onClick={handleLogout}
+            className="flex items-center gap-2 px-3 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors text-sm"
+            title="Logout"
+          >
+            <Shield className="h-4 w-4" />
+            <span className="hidden lg:inline">Logout</span>
+          </button>
 
           <button
             onClick={handleSettings}
