@@ -51,14 +51,15 @@ export default function PasswordProtection({ children }: PasswordProtectionProps
   if (isAuthenticated) {
     return (
       <div>
-        {/* Logout button in top left corner */}
-        <div className="fixed top-4 left-4 z-50">
+        {/* Logout button in top right corner to avoid mobile menu */}
+        <div className="fixed top-4 right-4 z-50">
           <button
             onClick={handleLogout}
             className="flex items-center gap-2 px-3 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors shadow-lg text-sm"
+            title="Logout"
           >
             <Shield className="h-4 w-4" />
-            Logout
+            <span className="hidden sm:inline">Logout</span>
           </button>
         </div>
         {children}
