@@ -307,3 +307,154 @@ export const marketPositioningData = [
     color: '#10b981'
   }
 ];
+
+// Current vs Future State Data
+export const currentVsFutureState = {
+  currentState: {
+    title: 'Current State',
+    subtitle: 'Single Customer Solution',
+    features: [
+      { icon: 'User', title: 'Single Customer', description: 'Built for one specific client' },
+      { icon: 'Code', title: 'Custom Code', description: 'Hardcoded business logic' },
+      { icon: 'Upload', title: 'Manual Deployment', description: 'Manual server updates' },
+      { icon: 'Database', title: 'Single Database', description: 'One database instance' },
+      { icon: 'Settings', title: 'Fixed Configuration', description: 'No customization options' }
+    ]
+  },
+  futureState: {
+    title: 'Future State',
+    subtitle: 'Multi-Tenant SaaS Platform',
+    features: [
+      { icon: 'Users', title: 'Multi-Tenant', description: 'Scalable for multiple clients' },
+      { icon: 'Layers', title: 'Configurable', description: 'Flexible business rules' },
+      { icon: 'Zap', title: 'Automated Deployment', description: 'CI/CD pipeline' },
+      { icon: 'Cloud', title: 'Cloud Architecture', description: 'Scalable infrastructure' },
+      { icon: 'Sliders', title: 'Customizable', description: 'Client-specific configurations' }
+    ]
+  }
+};
+
+// Product Module Architecture Data
+export const productModules = {
+  coreHub: {
+    name: 'Chloe Core Platform',
+    description: 'Central orchestration layer with tenant management and shared services',
+    position: { x: 50, y: 50 }
+  },
+  modules: [
+    {
+      id: 'inventory',
+      name: 'Inventory Management',
+      description: 'Real-time inventory tracking, stock levels, and automated reordering',
+      icon: 'Package',
+      position: { x: 20, y: 20 },
+      status: 'in_development',
+      complexity: 'high'
+    },
+    {
+      id: 'orders',
+      name: 'Order Management',
+      description: 'Order processing, fulfillment tracking, and customer communications',
+      icon: 'ShoppingCart',
+      position: { x: 80, y: 20 },
+      status: 'planned',
+      complexity: 'medium'
+    },
+    {
+      id: 'pricing',
+      name: 'Pricing & Promotions',
+      description: 'Dynamic pricing rules, promotional campaigns, and discount management',
+      icon: 'Tag',
+      position: { x: 20, y: 80 },
+      status: 'in_development',
+      complexity: 'medium'
+    },
+    {
+      id: 'reporting',
+      name: 'Reporting & Analytics',
+      description: 'Business intelligence, performance metrics, and custom dashboards',
+      icon: 'BarChart3',
+      position: { x: 80, y: 80 },
+      status: 'completed',
+      complexity: 'low'
+    },
+    {
+      id: 'users',
+      name: 'User Management',
+      description: 'Role-based access control, user authentication, and tenant administration',
+      icon: 'UserCog',
+      position: { x: 50, y: 15 },
+      status: 'completed',
+      complexity: 'low'
+    }
+  ],
+  integrations: [
+    {
+      name: 'Microsoft Business Central',
+      description: 'ERP integration for financial data and business processes',
+      icon: 'Database',
+      position: { x: 50, y: 85 },
+      type: 'primary'
+    }
+  ]
+};
+
+// Technical Transformation Roadmap Data
+export const technicalRoadmap = [
+  {
+    phase: 'Phase 1',
+    title: 'Architecture Design',
+    duration: 'Months 1-2',
+    progress: 85,
+    status: 'in_progress',
+    tasks: [
+      'Multi-tenant architecture design',
+      'Database schema planning',
+      'Security framework design',
+      'Integration architecture'
+    ],
+    deliverables: ['Architecture Documentation', 'Technical Specifications', 'Security Design']
+  },
+  {
+    phase: 'Phase 2',
+    title: 'Core Development',
+    duration: 'Months 3-5',
+    progress: 30,
+    status: 'in_progress',
+    tasks: [
+      'Core platform development',
+      'Tenant management system',
+      'Authentication & authorization',
+      'Basic module implementation'
+    ],
+    deliverables: ['Core Platform', 'Tenant Management', 'Auth System', 'MVP Modules']
+  },
+  {
+    phase: 'Phase 3',
+    title: 'Integration & Testing',
+    duration: 'Months 6-7',
+    progress: 10,
+    status: 'planned',
+    tasks: [
+      'Business Central integration',
+      'End-to-end testing',
+      'Performance optimization',
+      'Security testing'
+    ],
+    deliverables: ['Integration Layer', 'Test Suite', 'Performance Report', 'Security Audit']
+  },
+  {
+    phase: 'Phase 4',
+    title: 'Launch & Optimization',
+    duration: 'Months 8-12',
+    progress: 0,
+    status: 'planned',
+    tasks: [
+      'Production deployment',
+      'Customer onboarding',
+      'Performance monitoring',
+      'Feature enhancements'
+    ],
+    deliverables: ['Production System', 'Onboarding Process', 'Monitoring Dashboard', 'Enhancement Plan']
+  }
+];

@@ -1,28 +1,33 @@
-import Card from '@/components/ui/Card';
+import { currentVsFutureState, productModules, technicalRoadmap } from '@/data/mockData';
+import CurrentVsFutureState from '@/components/strategy/CurrentVsFutureState';
+import ProductArchitecture from '@/components/strategy/ProductArchitecture';
+import TechnicalRoadmap from '@/components/strategy/TechnicalRoadmap';
 
 export default function Strategy() {
   return (
     <div className="space-y-6">
-      <h1 className="text-3xl font-bold text-secondary-900">Product Strategy</h1>
+      <div className="flex items-center justify-between">
+        <h1 className="text-3xl font-bold text-secondary-900">Product Strategy</h1>
+        <div className="text-sm text-secondary-600">
+          Technical transformation and architecture planning
+        </div>
+      </div>
 
-      <Card>
-        <h2 className="mb-4 text-xl font-semibold text-secondary-900">
-          Current vs Future State
-        </h2>
-        <p className="text-secondary-600">
-          This section will contain detailed product transformation strategy,
-          technical roadmap, and feature prioritization matrix.
-        </p>
-      </Card>
+      {/* Current vs Future State Comparison */}
+      <CurrentVsFutureState
+        currentState={currentVsFutureState.currentState}
+        futureState={currentVsFutureState.futureState}
+      />
 
-      <Card>
-        <h2 className="mb-4 text-xl font-semibold text-secondary-900">
-          Technical Architecture
-        </h2>
-        <p className="text-secondary-600">
-          Multi-tenant SaaS architecture design and implementation plan.
-        </p>
-      </Card>
+      {/* Product Module Architecture */}
+      <ProductArchitecture
+        coreHub={productModules.coreHub}
+        modules={productModules.modules}
+        integrations={productModules.integrations}
+      />
+
+      {/* Technical Transformation Roadmap */}
+      <TechnicalRoadmap phases={technicalRoadmap} />
     </div>
   );
 }
