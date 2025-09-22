@@ -233,3 +233,77 @@ export const quickStats = [
     icon: 'CheckCircle'
   }
 ];
+
+// Revenue Growth Projection Data
+export const revenueProjectionData = (() => {
+  const months = Array.from({ length: 36 }, (_, i) => i + 1);
+  return months.map(month => ({
+    month,
+    conservative: month <= 12 ? month * 35000 :
+                 month <= 24 ? 420000 + (month - 12) * 120000 :
+                 1860000 + (month - 24) * 220000,
+    realistic: month <= 12 ? month * 50000 :
+              month <= 24 ? 600000 + (month - 12) * 150000 :
+              2400000 + (month - 24) * 258333,
+    optimistic: month <= 12 ? month * 70000 :
+               month <= 24 ? 840000 + (month - 12) * 200000 :
+               3240000 + (month - 24) * 355000
+  }));
+})();
+
+// Customer Acquisition Funnel Data
+export const customerFunnelData = [
+  { stage: 'Leads Generated', value: 500, percentage: 100, color: '#3b82f6' },
+  { stage: 'Qualified Prospects', value: 100, percentage: 20, color: '#10b981' },
+  { stage: 'Demos Scheduled', value: 40, percentage: 8, color: '#f59e0b' },
+  { stage: 'Trials Started', value: 25, percentage: 5, color: '#ef4444' },
+  { stage: 'Customers Acquired', value: 20, percentage: 4, color: '#8b5cf6' }
+];
+
+// Investment Breakdown Data
+export const investmentBreakdownData = [
+  { name: 'Personnel', value: 1200000, percentage: 73, color: '#3b82f6' },
+  { name: 'Marketing', value: 200000, percentage: 12, color: '#10b981' },
+  { name: 'Technology', value: 150000, percentage: 9, color: '#f59e0b' },
+  { name: 'Operations', value: 100000, percentage: 6, color: '#ef4444' }
+];
+
+// Market Positioning Radar Data
+export const marketPositioningData = [
+  {
+    company: 'Chloe',
+    features: 85,
+    price: 80,
+    support: 90,
+    integration: 95,
+    scalability: 88,
+    color: '#3b82f6'
+  },
+  {
+    company: 'Competitor A',
+    features: 75,
+    price: 70,
+    support: 85,
+    integration: 70,
+    scalability: 75,
+    color: '#ef4444'
+  },
+  {
+    company: 'Competitor B',
+    features: 80,
+    price: 85,
+    support: 75,
+    integration: 80,
+    scalability: 70,
+    color: '#f59e0b'
+  },
+  {
+    company: 'Competitor C',
+    features: 70,
+    price: 90,
+    support: 80,
+    integration: 65,
+    scalability: 80,
+    color: '#10b981'
+  }
+];

@@ -1,8 +1,21 @@
-import { dashboardMetrics, transformationTimeline, successProbability, quickStats } from '@/data/mockData';
+import {
+  dashboardMetrics,
+  transformationTimeline,
+  successProbability,
+  quickStats,
+  revenueProjectionData,
+  customerFunnelData,
+  investmentBreakdownData,
+  marketPositioningData
+} from '@/data/mockData';
 import MetricsCard from '@/components/charts/MetricsCard';
 import TransformationTimeline from '@/components/charts/TransformationTimeline';
 import SuccessProbabilityGauge from '@/components/charts/SuccessProbabilityGauge';
 import QuickStatsGrid from '@/components/charts/QuickStatsGrid';
+import RevenueGrowthChart from '@/components/charts/RevenueGrowthChart';
+import CustomerFunnelChart from '@/components/charts/CustomerFunnelChart';
+import InvestmentBreakdownChart from '@/components/charts/InvestmentBreakdownChart';
+import MarketPositioningChart from '@/components/charts/MarketPositioningChart';
 import Card from '@/components/ui/Card';
 
 export default function Dashboard() {
@@ -32,6 +45,25 @@ export default function Dashboard() {
           factors={successProbability.factors}
         />
         <QuickStatsGrid data={quickStats} />
+      </div>
+
+      {/* Strategic Overview Charts */}
+      <div className="space-y-6">
+        <h2 className="text-2xl font-bold text-secondary-900 border-b border-secondary-200 pb-3">
+          Strategic Overview & Analysis
+        </h2>
+
+        {/* Revenue Growth Projection */}
+        <RevenueGrowthChart data={revenueProjectionData} />
+
+        {/* Customer Funnel & Investment Breakdown */}
+        <div className="grid grid-cols-1 gap-6 xl:grid-cols-2">
+          <CustomerFunnelChart data={customerFunnelData} />
+          <InvestmentBreakdownChart data={investmentBreakdownData} />
+        </div>
+
+        {/* Market Positioning */}
+        <MarketPositioningChart data={marketPositioningData} />
       </div>
 
       {/* Quick Actions */}
