@@ -3,7 +3,7 @@ import MainLayout from './components/layout/MainLayout';
 import Dashboard from './pages/Dashboard';
 import Strategy from './pages/Strategy';
 import Team from './pages/Team';
-import Marketing from './pages/Marketing';
+import Sales from './pages/Sales';
 import Financial from './pages/Financial';
 import Project from './pages/Project';
 import Risk from './pages/Risk';
@@ -16,7 +16,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/strategy" element={<Strategy />} />
         <Route path="/team" element={<Team />} />
-        <Route path="/marketing" element={<Marketing />} />
+        <Route path="/marketing" element={<Sales />} />
         <Route path="/financial" element={<Financial />} />
         <Route path="/project" element={<Project />} />
         <Route path="/risk" element={<Risk />} />

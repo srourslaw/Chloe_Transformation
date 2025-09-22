@@ -2,12 +2,14 @@ import {
   organizationalChart,
   teamHiringTimeline,
   skillsMatrix,
-  teamCapacityPlanning
+  teamCapacityPlanning,
+  teamPerformanceMetrics
 } from '@/data/mockData';
 import OrganizationalChart from '@/components/team/OrganizationalChart';
 import TeamHiringTimeline from '@/components/team/TeamHiringTimeline';
 import SkillsMatrix from '@/components/team/SkillsMatrix';
 import TeamCapacityPlanning from '@/components/team/TeamCapacityPlanning';
+import TeamPerformanceMetrics from '@/components/team/TeamPerformanceMetrics';
 
 export default function Team() {
   return (
@@ -39,6 +41,14 @@ export default function Team() {
       <TeamCapacityPlanning
         phases={teamCapacityPlanning.phases}
         resourceConflicts={teamCapacityPlanning.resourceConflicts}
+      />
+
+      {/* Team Performance Metrics */}
+      <TeamPerformanceMetrics
+        weeklyMetrics={teamPerformanceMetrics.weeklyMetrics}
+        monthlyReviews={teamPerformanceMetrics.monthlyReviews}
+        quarterlyAssessment={teamPerformanceMetrics.quarterlyAssessment}
+        budgetAllocation={teamPerformanceMetrics.budgetAllocation}
       />
     </div>
   );

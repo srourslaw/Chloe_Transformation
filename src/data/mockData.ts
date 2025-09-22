@@ -985,6 +985,216 @@ export const teamCapacityPlanning = {
   ]
 };
 
+// Team Performance Metrics Data
+export const teamPerformanceMetrics = {
+  weeklyMetrics: [
+    {
+      week: 'Week 1',
+      storyPoints: 34,
+      bugResolution: 92,
+      codeReviewTime: 8.5,
+      customerProgress: 85
+    },
+    {
+      week: 'Week 2',
+      storyPoints: 38,
+      bugResolution: 88,
+      codeReviewTime: 6.2,
+      customerProgress: 90
+    },
+    {
+      week: 'Week 3',
+      storyPoints: 42,
+      bugResolution: 95,
+      codeReviewTime: 7.1,
+      customerProgress: 88
+    },
+    {
+      week: 'Week 4',
+      storyPoints: 36,
+      bugResolution: 90,
+      codeReviewTime: 9.3,
+      customerProgress: 92
+    },
+    {
+      week: 'Week 5',
+      storyPoints: 40,
+      bugResolution: 94,
+      codeReviewTime: 5.8,
+      customerProgress: 87
+    },
+    {
+      week: 'Week 6',
+      storyPoints: 45,
+      bugResolution: 91,
+      codeReviewTime: 7.7,
+      customerProgress: 94
+    }
+  ],
+  monthlyReviews: [
+    {
+      month: 'Month 1',
+      teamSatisfaction: 4.2,
+      productivity: 88,
+      trainingCompletion: 75,
+      retention: 100
+    },
+    {
+      month: 'Month 2',
+      teamSatisfaction: 4.4,
+      productivity: 92,
+      trainingCompletion: 82,
+      retention: 100
+    },
+    {
+      month: 'Month 3',
+      teamSatisfaction: 4.1,
+      productivity: 85,
+      trainingCompletion: 88,
+      retention: 95
+    }
+  ],
+  quarterlyAssessment: [
+    {
+      quarter: 'Q1 2024',
+      performanceVsGoals: 92,
+      skillDevelopment: 78,
+      careerProgression: 85,
+      teamExpansion: 3
+    }
+  ],
+  budgetAllocation: {
+    personnelCosts: [
+      { role: 'CEO & Founder', cost: 180000, percentage: 15 },
+      { role: 'VP Positions', cost: 480000, percentage: 40 },
+      { role: 'Senior Developers', cost: 360000, percentage: 30 },
+      { role: 'Other Roles', cost: 180000, percentage: 15 }
+    ],
+    trainingBudget: 25000,
+    equipmentBudget: 35000,
+    performanceBonus: 60000
+  }
+};
+
+// Sales & Marketing Data
+export const salesMarketingData = {
+  marketSegmentation: [
+    { segment: 'Independent Grocery Stores', percentage: 60, size: 7400, opportunity: 145000 },
+    { segment: 'Regional Chains', percentage: 25, size: 850, opportunity: 85000 },
+    { segment: 'Specialty Retailers', percentage: 15, size: 1200, opportunity: 48000 }
+  ],
+  salesPipeline: [
+    { stage: 'Leads', count: 400, value: 0, conversionRate: 20 },
+    { stage: 'Qualified', count: 80, value: 240000, conversionRate: 40 },
+    { stage: 'Demo', count: 32, value: 192000, conversionRate: 62.5 },
+    { stage: 'Trial', count: 20, value: 160000, conversionRate: 75 },
+    { stage: 'Closed', count: 15, value: 135000, conversionRate: 100 }
+  ],
+  marketingCampaigns: [
+    {
+      campaign: 'Content Marketing',
+      spend: 25000,
+      leads: 180,
+      costPerLead: 139,
+      roi: 3.2,
+      period: 'Q1 2024'
+    },
+    {
+      campaign: 'Digital Advertising',
+      spend: 40000,
+      leads: 220,
+      costPerLead: 182,
+      roi: 2.8,
+      period: 'Q1 2024'
+    },
+    {
+      campaign: 'Trade Shows',
+      spend: 35000,
+      leads: 95,
+      costPerLead: 368,
+      roi: 4.1,
+      period: 'Q1 2024'
+    },
+    {
+      campaign: 'Referral Program',
+      spend: 15000,
+      leads: 45,
+      costPerLead: 333,
+      roi: 5.2,
+      period: 'Q1 2024'
+    }
+  ],
+  competitivePositioning: [
+    { company: 'Chloe', price: 499, features: 85, marketShare: 2 },
+    { company: 'LS Central', price: 650, features: 90, marketShare: 25 },
+    { company: 'Toast POS', price: 425, features: 75, marketShare: 18 },
+    { company: 'Square Retail', price: 350, features: 70, marketShare: 22 },
+    { company: 'Shopify POS', price: 275, features: 65, marketShare: 15 }
+  ]
+};
+
+// Pricing Strategy Data
+export const pricingStrategyData = {
+  pricingTiers: [
+    {
+      tier: 'Starter',
+      price: 299,
+      setupFee: 1000,
+      features: ['Basic Inventory', 'Simple Reporting', 'Email Support'],
+      targetCustomers: 'Small independent stores',
+      projectedRevenue: 89700,
+      customerDistribution: 30
+    },
+    {
+      tier: 'Professional',
+      price: 499,
+      setupFee: 2000,
+      features: ['Advanced Inventory', 'Custom Reports', 'Phone Support', 'Basic Analytics'],
+      targetCustomers: 'Medium-sized retailers',
+      projectedRevenue: 199600,
+      customerDistribution: 40
+    },
+    {
+      tier: 'Enterprise',
+      price: 799,
+      setupFee: 3000,
+      features: ['Full Platform', 'Advanced Analytics', 'Priority Support', 'Custom Integrations'],
+      targetCustomers: 'Regional chains',
+      projectedRevenue: 191760,
+      customerDistribution: 30
+    }
+  ],
+  customerLifetimeValue: {
+    variables: {
+      monthlyFee: 499,
+      retentionRate: 87,
+      upsellRate: 15,
+      averageLifespan: 28
+    },
+    calculations: {
+      baseLTV: 13972,
+      upsellLTV: 2096,
+      totalLTV: 16068,
+      acquisitionCost: 2800,
+      ltvCacRatio: 5.7
+    }
+  },
+  marketPenetration: {
+    geographicExpansion: [
+      { region: 'Northeast US', timeline: 'Month 1-6', customers: 8, investment: 45000 },
+      { region: 'Southeast US', timeline: 'Month 4-9', customers: 12, investment: 55000 },
+      { region: 'Midwest US', timeline: 'Month 7-12', customers: 15, investment: 60000 },
+      { region: 'West Coast US', timeline: 'Month 10-15', customers: 18, investment: 75000 }
+    ],
+    acquisitionRate: 3.5
+  },
+  partnerProgram: [
+    { partnerType: 'System Integrators', revenueShare: 20, pipelineValue: 180000, status: 'active' },
+    { partnerType: 'Resellers', revenueShare: 15, pipelineValue: 120000, status: 'recruiting' },
+    { partnerType: 'Consultants', revenueShare: 10, pipelineValue: 80000, status: 'planned' }
+  ]
+};
+
 // Technical Transformation Roadmap Data
 export const technicalRoadmap = [
   {
