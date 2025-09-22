@@ -11,16 +11,16 @@ export const dashboardMetrics: MetricCardData[] = [
   },
   {
     title: 'Projected Year 3 Revenue',
-    value: '$5.5M',
-    change: '+450% growth',
+    value: '$4.2M',
+    change: 'Realistic scenario',
     changeType: 'increase',
     icon: 'TrendingUp',
     color: 'success'
   },
   {
     title: 'Target Customers (Year 1)',
-    value: '20',
-    change: 'Pilot customers',
+    value: '15',
+    change: 'Conservative target',
     changeType: 'increase',
     icon: 'Users',
     color: 'primary'
@@ -192,13 +192,13 @@ export const transformationTimeline = [
 
 // Success Probability Data
 export const successProbability = {
-  percentage: 85,
+  percentage: 75,
   factors: [
-    { name: 'Market Analysis', score: 90, weight: 0.3 },
-    { name: 'Team Capability', score: 85, weight: 0.25 },
-    { name: 'Technical Feasibility', score: 80, weight: 0.2 },
-    { name: 'Financial Resources', score: 90, weight: 0.15 },
-    { name: 'Competition Level', score: 75, weight: 0.1 }
+    { name: 'Market Analysis', score: 85, weight: 0.3 },
+    { name: 'Team Capability', score: 80, weight: 0.25 },
+    { name: 'Technical Feasibility', score: 70, weight: 0.2 },
+    { name: 'Financial Resources', score: 80, weight: 0.15 },
+    { name: 'Competition Level', score: 65, weight: 0.1 }
   ]
 };
 
@@ -206,22 +206,22 @@ export const successProbability = {
 export const quickStats = [
   {
     label: 'Market Size',
-    value: '$2.3B',
-    description: 'Grocery tech market',
+    value: '$12.38B',
+    description: 'Retail pricing software market',
     trend: 'growing',
     icon: 'TrendingUp'
   },
   {
-    label: 'Competition Level',
-    value: 'Medium',
-    description: '12 direct competitors',
+    label: 'Annual Growth Rate',
+    value: '8.41%',
+    description: 'CAGR market growth',
     trend: 'stable',
     icon: 'BarChart3'
   },
   {
-    label: 'Technical Complexity',
-    value: 'High',
-    description: 'Enterprise integration',
+    label: 'Competition Level',
+    value: 'Medium-High',
+    description: 'Established players present',
     trend: 'manageable',
     icon: 'Settings'
   },
@@ -239,25 +239,25 @@ export const revenueProjectionData = (() => {
   const months = Array.from({ length: 36 }, (_, i) => i + 1);
   return months.map(month => ({
     month,
-    conservative: month <= 12 ? month * 35000 :
-                 month <= 24 ? 420000 + (month - 12) * 120000 :
-                 1860000 + (month - 24) * 220000,
-    realistic: month <= 12 ? month * 50000 :
-              month <= 24 ? 600000 + (month - 12) * 150000 :
-              2400000 + (month - 24) * 258333,
-    optimistic: month <= 12 ? month * 70000 :
-               month <= 24 ? 840000 + (month - 12) * 200000 :
-               3240000 + (month - 24) * 355000
+    conservative: month <= 12 ? month * 29167 :  // Month 12: $350K
+                 month <= 24 ? 350000 + (month - 12) * 70833 :  // Month 24: $1.2M
+                 1200000 + (month - 24) * 133333,  // Month 36: $2.8M
+    realistic: month <= 12 ? month * 37500 :  // Month 12: $450K
+              month <= 24 ? 450000 + (month - 12) * 112500 :  // Month 24: $1.8M
+              1800000 + (month - 24) * 200000,  // Month 36: $4.2M
+    optimistic: month <= 12 ? month * 50000 :  // Month 12: $600K
+               month <= 24 ? 600000 + (month - 12) * 150000 :  // Month 24: $2.4M
+               2400000 + (month - 24) * 258333  // Month 36: $5.5M
   }));
 })();
 
 // Customer Acquisition Funnel Data
 export const customerFunnelData = [
-  { stage: 'Leads Generated', value: 500, percentage: 100, color: '#3b82f6' },
-  { stage: 'Qualified Prospects', value: 100, percentage: 20, color: '#10b981' },
-  { stage: 'Demos Scheduled', value: 40, percentage: 8, color: '#f59e0b' },
-  { stage: 'Trials Started', value: 25, percentage: 5, color: '#ef4444' },
-  { stage: 'Customers Acquired', value: 20, percentage: 4, color: '#8b5cf6' }
+  { stage: 'Leads Generated', value: 400, percentage: 100, color: '#3b82f6' },
+  { stage: 'Qualified Prospects', value: 80, percentage: 20, color: '#10b981' },
+  { stage: 'Demos Scheduled', value: 32, percentage: 8, color: '#f59e0b' },
+  { stage: 'Trials Started', value: 20, percentage: 5, color: '#ef4444' },
+  { stage: 'Customers Acquired', value: 15, percentage: 3.75, color: '#8b5cf6' }
 ];
 
 // Investment Breakdown Data

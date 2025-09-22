@@ -53,8 +53,8 @@ Create an executive overview dashboard page that includes:
 
 1. Key Metrics Cards (4 cards in a row):
    - Total Investment Required: $1.65M
-   - Projected Year 3 Revenue: $5.5M
-   - Target Customers (Year 1): 20
+   - Projected Year 3 Revenue: $4.2M (realistic scenario)
+   - Target Customers (Year 1): 15
    - Team Size: 11 members
 
 2. Transformation Progress Timeline (visual timeline):
@@ -63,12 +63,13 @@ Create an executive overview dashboard page that includes:
    - Key milestones from months 1-12
 
 3. Success Probability Gauge:
-   - Visual gauge showing 85% success probability
-   - Based on market analysis and team capability
+   - Visual gauge showing 75% success probability (more conservative)
+   - Based on market analysis and realistic execution challenges
 
 4. Quick Stats Grid:
-   - Market Size: $2.3B grocery tech market
-   - Competition Level: Medium
+   - Market Size: $12.38B retail pricing software market
+   - Annual Growth Rate: 8.41% CAGR
+   - Competition Level: Medium-High
    - Technical Complexity: High
    - Market Readiness: High
 
@@ -82,15 +83,17 @@ Add to the overview dashboard:
 1. Revenue Growth Projection Chart (Line Chart):
    - X-axis: Months 1-36
    - Y-axis: Revenue ($)
-   - Show three scenarios: Conservative, Realistic, Optimistic
-   - Include data points: Month 12: $600K, Month 24: $2.4M, Month 36: $5.5M
+   - Show three scenarios: 
+     * Conservative: Month 12: $350K, Month 24: $1.2M, Month 36: $2.8M
+     * Realistic: Month 12: $450K, Month 24: $1.8M, Month 36: $4.2M
+     * Optimistic: Month 12: $600K, Month 24: $2.4M, Month 36: $5.5M
 
 2. Customer Acquisition Funnel (Funnel Chart):
-   - Leads Generated: 500
-   - Qualified Prospects: 100
-   - Demos Scheduled: 40
-   - Trials Started: 25
-   - Customers Acquired: 20
+   - Leads Generated: 400
+   - Qualified Prospects: 80
+   - Demos Scheduled: 32
+   - Trials Started: 20
+   - Customers Acquired: 15 (realistic target)
 
 3. Investment Breakdown Pie Chart:
    - Personnel: $1.2M (73%)
@@ -100,7 +103,7 @@ Add to the overview dashboard:
 
 4. Market Positioning Radar Chart:
    - Axes: Features, Price, Support, Integration, Scalability
-   - Show Chloe vs 3 competitors
+   - Show Chloe vs 3 competitors (LS Central, Toast POS, Square for Retail)
 ```
 
 ---
@@ -256,17 +259,19 @@ Add revenue and pricing components:
    - Feature comparison matrix
    - Revenue projection per tier
    - Customer distribution across tiers
+   - Setup fees: $1,000-$3,000 (reduced from original)
 
 2. Customer Lifetime Value (LTV) Calculator:
    - Interactive calculator with sliders
-   - Variables: Monthly fee, retention rate, upsell rate
+   - Variables: Monthly fee, retention rate (85-90%), upsell rate
+   - Realistic LTV/CAC ratio of 4:1 to 6:1
    - Visual representation of LTV across customer segments
 
 3. Market Penetration Strategy:
    - Geographic expansion plan
    - Timeline for entering new markets
    - Resource requirements per market
-   - Expected customer acquisition by region
+   - Expected customer acquisition: 3-4 customers/month by Month 8
 
 4. Partnership Program Dashboard:
    - Partner types and revenue sharing
@@ -352,6 +357,7 @@ Create comprehensive timeline dashboard:
    - Product Development, Team Building, Marketing, Sales
    - Dependencies and critical path highlighted
    - Milestone markers with success criteria
+   - Realistic customer acquisition: 15 customers by Month 12
 
 2. Sprint Planning Board:
    - Kanban-style board for development sprints
@@ -361,7 +367,7 @@ Create comprehensive timeline dashboard:
 
 3. Milestone Achievement Tracker:
    - Key milestones with target and actual dates
-   - Success criteria and achievement percentage
+   - Success criteria: 85-90% customer retention, 3-4 customers/month by Month 8
    - Risk indicators for delayed milestones
    - Impact analysis of delays
 
