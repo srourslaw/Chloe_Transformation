@@ -39,12 +39,16 @@ export default function Dashboard() {
       <TransformationTimeline data={transformationTimeline} />
 
       {/* Success Probability & Quick Stats */}
-      <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
-        <SuccessProbabilityGauge
-          percentage={successProbability.percentage}
-          factors={successProbability.factors}
-        />
-        <QuickStatsGrid data={quickStats} />
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
+        <div className="lg:col-span-1">
+          <SuccessProbabilityGauge
+            percentage={successProbability.percentage}
+            factors={successProbability.factors}
+          />
+        </div>
+        <div className="lg:col-span-2">
+          <QuickStatsGrid data={quickStats} />
+        </div>
       </div>
 
       {/* Strategic Overview Charts */}

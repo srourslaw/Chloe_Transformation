@@ -1195,6 +1195,156 @@ export const pricingStrategyData = {
   ]
 };
 
+// Financial Modeling Data
+export const financialModelingData = {
+  revenueProjectionModels: {
+    scenarios: [
+      {
+        scenario: 'Conservative',
+        monthlyGrowthRate: 8,
+        yearOneRevenue: 350000,
+        yearTwoRevenue: 1200000,
+        yearThreeRevenue: 2800000,
+        customerCount: [15, 35, 75],
+        avgRevenuePerCustomer: [1944, 2857, 3111]
+      },
+      {
+        scenario: 'Realistic',
+        monthlyGrowthRate: 12,
+        yearOneRevenue: 450000,
+        yearTwoRevenue: 1800000,
+        yearThreeRevenue: 4200000,
+        customerCount: [20, 50, 110],
+        avgRevenuePerCustomer: [1875, 3000, 3182]
+      },
+      {
+        scenario: 'Optimistic',
+        monthlyGrowthRate: 18,
+        yearOneRevenue: 600000,
+        yearTwoRevenue: 2400000,
+        yearThreeRevenue: 5500000,
+        customerCount: [25, 65, 145],
+        avgRevenuePerCustomer: [2000, 3077, 3172]
+      }
+    ],
+    assumptions: {
+      churnRate: 8,
+      upsellRate: 15,
+      avgContractLength: 28,
+      seasonalityFactor: 0.85
+    }
+  },
+  costStructureAnalysis: {
+    operatingExpenses: [
+      { category: 'Personnel', year1: 1200000, year2: 1800000, year3: 2400000, percentage: 58 },
+      { category: 'Technology & Infrastructure', year1: 150000, year2: 280000, year3: 420000, percentage: 8 },
+      { category: 'Sales & Marketing', year1: 200000, year2: 350000, year3: 525000, percentage: 12 },
+      { category: 'Operations', year1: 100000, year2: 180000, year3: 270000, percentage: 6 },
+      { category: 'Professional Services', year1: 75000, year2: 120000, year3: 180000, percentage: 4 },
+      { category: 'Other', year1: 125000, year2: 190000, year3: 285000, percentage: 7 }
+    ],
+    customerAcquisitionCost: {
+      blendedCAC: 2800,
+      salesCAC: 3200,
+      marketingCAC: 2400,
+      organicCAC: 800,
+      paybackPeriod: 14
+    },
+    grossMargin: {
+      year1: 72,
+      year2: 78,
+      year3: 82,
+      targetMargin: 85
+    }
+  },
+  cashFlowProjections: {
+    monthlyData: Array.from({ length: 36 }, (_, month) => {
+      const baseRevenue = month <= 12 ? (month * 37500) :
+                         month <= 24 ? (450000 + (month - 12) * 112500) :
+                         (1800000 + (month - 24) * 200000);
+      const operatingCosts = baseRevenue * 0.65;
+      const netCashFlow = baseRevenue - operatingCosts;
+      const cumulativeCashFlow = month === 0 ? netCashFlow : netCashFlow;
+
+      return {
+        month: month + 1,
+        revenue: Math.round(baseRevenue),
+        operatingCosts: Math.round(operatingCosts),
+        netCashFlow: Math.round(netCashFlow),
+        cumulativeCashFlow: Math.round(cumulativeCashFlow),
+        runway: month > 12 ? Math.max(0, 24 - Math.floor(month / 2)) : 24
+      };
+    }),
+    fundingRequirements: [
+      { milestone: 'Seed Round', amount: 1650000, month: 0, purpose: 'Product development and team building' },
+      { milestone: 'Series A', amount: 3500000, month: 18, purpose: 'Market expansion and sales acceleration' },
+      { milestone: 'Series B', amount: 8000000, month: 36, purpose: 'National expansion and enterprise features' }
+    ]
+  },
+  investmentROI: {
+    initialInvestment: 1650000,
+    projectedReturns: [
+      { year: 1, valuation: 8000000, roi: 385 },
+      { year: 2, valuation: 18000000, roi: 991 },
+      { year: 3, valuation: 42000000, roi: 2445 },
+      { year: 5, valuation: 125000000, roi: 7476 }
+    ],
+    exitScenarios: [
+      { scenario: 'Conservative Exit', multiple: 8, valuation: 33600000, probability: 60 },
+      { scenario: 'Realistic Exit', multiple: 12, valuation: 50400000, probability: 30 },
+      { scenario: 'Optimistic Exit', multiple: 18, valuation: 75600000, probability: 10 }
+    ],
+    npvCalculation: {
+      discountRate: 12,
+      npv: 28450000,
+      irr: 145,
+      paybackPeriod: 2.3
+    }
+  }
+};
+
+// SaaS Metrics Data
+export const saasMetricsData = {
+  monthlyRecurringRevenue: {
+    current: 125000,
+    growth: [
+      { month: 'Jan', mrr: 85000, newMRR: 25000, expansionMRR: 8000, churnMRR: -3000 },
+      { month: 'Feb', mrr: 95000, newMRR: 30000, expansionMRR: 12000, churnMRR: -2000 },
+      { month: 'Mar', mrr: 110000, newMRR: 35000, expansionMRR: 15000, churnMRR: -5000 },
+      { month: 'Apr', mrr: 125000, newMRR: 28000, expansionMRR: 10000, churnMRR: -3000 },
+      { month: 'May', mrr: 140000, newMRR: 32000, expansionMRR: 18000, churnMRR: -5000 },
+      { month: 'Jun', mrr: 158000, newMRR: 38000, expansionMRR: 22000, churnMRR: -2000 }
+    ]
+  },
+  customerMetrics: {
+    totalCustomers: 65,
+    newCustomers: 12,
+    churnedCustomers: 2,
+    netNewCustomers: 10,
+    customerGrowthRate: 18.5,
+    churnRate: 3.1,
+    netRevenueRetention: 112
+  },
+  unitEconomics: {
+    averageRevenuePerUser: 1923,
+    customerLifetimeValue: 16068,
+    customerAcquisitionCost: 2800,
+    ltvCacRatio: 5.7,
+    grossRevenueRetention: 97,
+    netRevenueRetention: 112,
+    paybackPeriod: 14,
+    contributionMargin: 78
+  },
+  financialHealth: {
+    burnRate: 185000,
+    runway: 18,
+    growthEfficiency: 2.4,
+    ruleOf40: 42,
+    cashPosition: 3300000,
+    profitabilityTimeline: 28
+  }
+};
+
 // Technical Transformation Roadmap Data
 export const technicalRoadmap = [
   {
@@ -1254,3 +1404,911 @@ export const technicalRoadmap = [
     deliverables: ['Production System', 'Onboarding Process', 'Monitoring Dashboard', 'Enhancement Plan']
   }
 ];
+
+// Financial KPIs & Metrics Data
+export const financialKPIsData = {
+  revenueMetrics: {
+    monthlyRecurringRevenue: {
+      current: 158000,
+      target: 200000,
+      growth: 28.5,
+      trend: [
+        { month: 'Jan', value: 85000, target: 90000 },
+        { month: 'Feb', value: 95000, target: 105000 },
+        { month: 'Mar', value: 110000, target: 120000 },
+        { month: 'Apr', value: 125000, target: 135000 },
+        { month: 'May', value: 140000, target: 150000 },
+        { month: 'Jun', value: 158000, target: 165000 }
+      ]
+    },
+    annualRecurringRevenue: {
+      current: 1896000,
+      target: 2400000,
+      growth: 45.2,
+      projection: 3200000
+    },
+    revenueGrowthRate: {
+      monthly: 12.9,
+      quarterly: 43.6,
+      annual: 68.2,
+      target: 15.0
+    }
+  },
+
+  profitabilityMetrics: {
+    grossMargin: {
+      current: 78.5,
+      target: 80.0,
+      trend: [78.2, 78.8, 78.1, 78.9, 78.7, 78.5],
+      industry: 75.0
+    },
+    operatingMargin: {
+      current: -12.3,
+      target: 20.0,
+      trend: [-18.5, -16.2, -14.8, -13.1, -12.9, -12.3],
+      projectedBreakeven: 14
+    },
+    netMargin: {
+      current: -15.8,
+      target: 15.0,
+      trend: [-22.1, -19.5, -17.2, -16.0, -15.9, -15.8],
+      projectedPositive: 16
+    },
+    ebitda: {
+      current: -23400,
+      target: 40000,
+      trend: [-35000, -28000, -26500, -25200, -24100, -23400],
+      projectedPositive: 18
+    }
+  },
+
+  cashFlowMetrics: {
+    operatingCashFlow: {
+      current: -18500,
+      target: 50000,
+      trend: [-28000, -24000, -21500, -20000, -19200, -18500],
+      projectedPositive: 16
+    },
+    freeCashFlow: {
+      current: -25000,
+      target: 35000,
+      trend: [-35000, -30000, -28000, -26500, -25800, -25000],
+      projectedPositive: 18
+    },
+    cashBurnRate: {
+      current: 185000,
+      target: 120000,
+      trend: [220000, 205000, 195000, 190000, 187000, 185000],
+      efficiency: 'improving'
+    },
+    cashRunway: {
+      current: 18,
+      target: 24,
+      withCurrentBurn: 18,
+      withTargetEfficiency: 28
+    }
+  },
+
+  customerMetrics: {
+    customerAcquisitionCost: {
+      current: 2800,
+      target: 2200,
+      trend: [3200, 3000, 2900, 2850, 2820, 2800],
+      byChannel: {
+        'Digital Marketing': 2400,
+        'Content Marketing': 1800,
+        'Direct Sales': 3200,
+        'Referrals': 1200,
+        'Partner Channel': 2800
+      }
+    },
+    customerLifetimeValue: {
+      current: 16068,
+      target: 20000,
+      trend: [14200, 14800, 15200, 15600, 15800, 16068],
+      bySegment: {
+        'Small Stores': 12800,
+        'Medium Stores': 16068,
+        'Large Stores': 24100
+      }
+    },
+    ltvCacRatio: {
+      current: 5.7,
+      target: 9.0,
+      trend: [4.4, 4.9, 5.2, 5.5, 5.6, 5.7],
+      benchmark: 3.0
+    },
+    paybackPeriod: {
+      current: 14,
+      target: 8,
+      trend: [18, 16, 15, 14.5, 14.2, 14],
+      unit: 'months'
+    }
+  },
+
+  saasMetrics: {
+    churnRate: {
+      current: 3.1,
+      target: 2.0,
+      trend: [4.2, 3.8, 3.5, 3.3, 3.2, 3.1],
+      gross: 3.1,
+      net: 2.4,
+      bySegment: {
+        'Small Stores': 4.5,
+        'Medium Stores': 2.8,
+        'Large Stores': 1.9
+      }
+    },
+    netRevenueRetention: {
+      current: 112,
+      target: 120,
+      trend: [105, 107, 108, 110, 111, 112],
+      expansion: 15.1,
+      contraction: 2.2
+    },
+    averageRevenuePerUser: {
+      current: 1923,
+      target: 2200,
+      trend: [1750, 1820, 1865, 1890, 1905, 1923],
+      bySegment: {
+        'Small Stores': 1450,
+        'Medium Stores': 1923,
+        'Large Stores': 2890
+      }
+    },
+    customerSatisfactionScore: {
+      current: 8.7,
+      target: 9.0,
+      trend: [8.2, 8.4, 8.5, 8.6, 8.6, 8.7],
+      scale: 10,
+      responseRate: 78
+    }
+  },
+
+  operationalMetrics: {
+    ruleOf40: {
+      current: 42,
+      target: 50,
+      revenueGrowth: 28.5,
+      profitMargin: 13.5,
+      trend: [35, 38, 39, 40, 41, 42]
+    },
+    grossRevenueRetention: {
+      current: 97,
+      target: 98,
+      trend: [95, 96, 96.5, 96.8, 97, 97],
+      benchmark: 95
+    },
+    salesEfficiency: {
+      current: 2.4,
+      target: 3.0,
+      trend: [1.8, 2.0, 2.1, 2.2, 2.3, 2.4],
+      calculation: 'New ARR / Sales & Marketing Spend'
+    },
+    magicNumber: {
+      current: 1.2,
+      target: 1.5,
+      trend: [0.8, 0.9, 1.0, 1.1, 1.1, 1.2],
+      benchmark: 1.0
+    }
+  },
+
+  comparisonMetrics: {
+    industryBenchmarks: {
+      'Gross Margin': { our: 78.5, industry: 75.0, percentile: 75 },
+      'Net Revenue Retention': { our: 112, industry: 108, percentile: 65 },
+      'CAC Payback': { our: 14, industry: 12, percentile: 40 },
+      'Churn Rate': { our: 3.1, industry: 5.2, percentile: 80 },
+      'LTV:CAC Ratio': { our: 5.7, industry: 4.2, percentile: 70 },
+      'Rule of 40': { our: 42, industry: 35, percentile: 75 }
+    },
+    competitorComparison: {
+      'Revenue Growth': { us: 28.5, competitor1: 22, competitor2: 31, competitor3: 18 },
+      'Gross Margin': { us: 78.5, competitor1: 72, competitor2: 80, competitor3: 69 },
+      'Customer Count': { us: 65, competitor1: 120, competitor2: 45, competitor3: 200 },
+      'ARPU': { us: 1923, competitor1: 1650, competitor2: 2100, competitor3: 1400 }
+    }
+  },
+
+  financialHealth: {
+    liquidityRatio: 4.2,
+    debtToEquity: 0.15,
+    workingCapital: 850000,
+    quickRatio: 3.8,
+    currentRatio: 4.2,
+    cashConversionCycle: 25,
+    creditRating: 'B+',
+    riskProfile: 'Moderate'
+  },
+
+  forecastAccuracy: {
+    revenueAccuracy: 92.5,
+    expenseAccuracy: 96.2,
+    customerCountAccuracy: 88.7,
+    churnAccuracy: 91.3,
+    confidenceInterval: 85
+  }
+};
+
+// Project Timeline & Milestones Data
+export const projectTimelineData = {
+  projectOverview: {
+    name: 'Chloe SaaS Transformation',
+    startDate: '2024-01-01',
+    endDate: '2024-12-31',
+    duration: 365,
+    totalBudget: 2500000,
+    spentBudget: 1250000,
+    completionPercentage: 45,
+    status: 'on_track',
+    riskLevel: 'medium',
+    nextMilestone: 'Beta Launch',
+    daysToNextMilestone: 28
+  },
+
+  phases: [
+    {
+      id: 'phase1',
+      name: 'Architecture & Planning',
+      startDate: '2024-01-01',
+      endDate: '2024-03-15',
+      duration: 74,
+      progress: 100,
+      status: 'completed',
+      budget: 400000,
+      spent: 380000,
+      team: ['Architecture Team', 'Product Team'],
+      keyDeliverables: [
+        'Technical Architecture Document',
+        'Database Design',
+        'Security Framework',
+        'Integration Strategy'
+      ]
+    },
+    {
+      id: 'phase2',
+      name: 'Core Development',
+      startDate: '2024-02-15',
+      endDate: '2024-06-30',
+      duration: 136,
+      progress: 75,
+      status: 'in_progress',
+      budget: 800000,
+      spent: 650000,
+      team: ['Engineering Team', 'UI/UX Team'],
+      keyDeliverables: [
+        'Core Platform MVP',
+        'User Authentication System',
+        'Tenant Management',
+        'Basic Modules Implementation'
+      ]
+    },
+    {
+      id: 'phase3',
+      name: 'Integration & Testing',
+      startDate: '2024-06-01',
+      endDate: '2024-09-15',
+      duration: 106,
+      progress: 25,
+      status: 'in_progress',
+      budget: 600000,
+      spent: 150000,
+      team: ['Engineering Team', 'QA Team', 'DevOps Team'],
+      keyDeliverables: [
+        'Business Central Integration',
+        'End-to-End Testing Suite',
+        'Performance Optimization',
+        'Security Testing & Audit'
+      ]
+    },
+    {
+      id: 'phase4',
+      name: 'Beta Launch & Optimization',
+      startDate: '2024-08-15',
+      endDate: '2024-12-31',
+      duration: 138,
+      progress: 10,
+      status: 'planned',
+      budget: 700000,
+      spent: 70000,
+      team: ['Full Team', 'Customer Success'],
+      keyDeliverables: [
+        'Beta Platform Deployment',
+        'Customer Onboarding Process',
+        'Monitoring & Analytics',
+        'Production Optimization'
+      ]
+    }
+  ],
+
+  milestones: [
+    {
+      id: 'ms1',
+      name: 'Architecture Approval',
+      date: '2024-03-15',
+      phase: 'phase1',
+      status: 'completed',
+      priority: 'critical',
+      dependencies: [],
+      deliverables: ['Architecture Document', 'Technical Specifications'],
+      stakeholders: ['CTO', 'Engineering Team', 'Board']
+    },
+    {
+      id: 'ms2',
+      name: 'MVP Core Complete',
+      date: '2024-05-30',
+      phase: 'phase2',
+      status: 'completed',
+      priority: 'critical',
+      dependencies: ['ms1'],
+      deliverables: ['Working MVP', 'Basic User Interface'],
+      stakeholders: ['Product Team', 'Engineering Team']
+    },
+    {
+      id: 'ms3',
+      name: 'Security Audit Complete',
+      date: '2024-07-15',
+      phase: 'phase3',
+      status: 'in_progress',
+      priority: 'high',
+      dependencies: ['ms2'],
+      deliverables: ['Security Audit Report', 'Compliance Documentation'],
+      stakeholders: ['Security Team', 'Compliance Officer']
+    },
+    {
+      id: 'ms4',
+      name: 'Beta Launch',
+      date: '2024-09-01',
+      phase: 'phase3',
+      status: 'upcoming',
+      priority: 'critical',
+      dependencies: ['ms3'],
+      deliverables: ['Beta Platform', 'Customer Onboarding'],
+      stakeholders: ['Product Team', 'Sales Team', 'Customer Success']
+    },
+    {
+      id: 'ms5',
+      name: 'Production Launch',
+      date: '2024-12-01',
+      phase: 'phase4',
+      status: 'planned',
+      priority: 'critical',
+      dependencies: ['ms4'],
+      deliverables: ['Production Platform', 'Go-to-Market Execution'],
+      stakeholders: ['All Teams', 'Executive Team']
+    }
+  ],
+
+  tasks: [
+    // Phase 2 - Core Development (Active)
+    {
+      id: 'task1',
+      name: 'Multi-tenant Architecture Implementation',
+      phase: 'phase2',
+      startDate: '2024-02-15',
+      endDate: '2024-04-30',
+      duration: 75,
+      progress: 90,
+      status: 'in_progress',
+      priority: 'critical',
+      assignee: 'Senior Backend Engineer',
+      estimatedHours: 320,
+      actualHours: 295,
+      dependencies: []
+    },
+    {
+      id: 'task2',
+      name: 'User Interface Development',
+      phase: 'phase2',
+      startDate: '2024-03-01',
+      endDate: '2024-05-15',
+      duration: 75,
+      progress: 85,
+      status: 'in_progress',
+      priority: 'high',
+      assignee: 'UI/UX Team',
+      estimatedHours: 240,
+      actualHours: 220,
+      dependencies: ['task1']
+    },
+    {
+      id: 'task3',
+      name: 'API Development',
+      phase: 'phase2',
+      startDate: '2024-03-15',
+      endDate: '2024-06-01',
+      duration: 78,
+      progress: 70,
+      status: 'in_progress',
+      priority: 'high',
+      assignee: 'Backend Team',
+      estimatedHours: 400,
+      actualHours: 280,
+      dependencies: ['task1']
+    },
+
+    // Phase 3 - Integration & Testing (Starting)
+    {
+      id: 'task4',
+      name: 'Business Central Integration',
+      phase: 'phase3',
+      startDate: '2024-06-01',
+      endDate: '2024-08-15',
+      duration: 75,
+      progress: 30,
+      status: 'in_progress',
+      priority: 'critical',
+      assignee: 'Integration Specialist',
+      estimatedHours: 350,
+      actualHours: 105,
+      dependencies: ['task2', 'task3']
+    },
+    {
+      id: 'task5',
+      name: 'Automated Testing Suite',
+      phase: 'phase3',
+      startDate: '2024-06-15',
+      endDate: '2024-08-30',
+      duration: 76,
+      progress: 20,
+      status: 'in_progress',
+      priority: 'high',
+      assignee: 'QA Engineer',
+      estimatedHours: 280,
+      actualHours: 56,
+      dependencies: ['task3']
+    },
+    {
+      id: 'task6',
+      name: 'Performance Optimization',
+      phase: 'phase3',
+      startDate: '2024-07-01',
+      endDate: '2024-09-01',
+      duration: 62,
+      progress: 10,
+      status: 'planned',
+      priority: 'medium',
+      assignee: 'Senior Engineer',
+      estimatedHours: 160,
+      actualHours: 16,
+      dependencies: ['task4']
+    },
+
+    // Phase 4 - Beta Launch (Planned)
+    {
+      id: 'task7',
+      name: 'Beta Customer Onboarding',
+      phase: 'phase4',
+      startDate: '2024-08-15',
+      endDate: '2024-10-31',
+      duration: 77,
+      progress: 5,
+      status: 'planned',
+      priority: 'high',
+      assignee: 'Customer Success Team',
+      estimatedHours: 200,
+      actualHours: 10,
+      dependencies: ['task4', 'task5']
+    },
+    {
+      id: 'task8',
+      name: 'Production Deployment Preparation',
+      phase: 'phase4',
+      startDate: '2024-10-01',
+      endDate: '2024-11-30',
+      duration: 60,
+      progress: 0,
+      status: 'planned',
+      priority: 'critical',
+      assignee: 'DevOps Team',
+      estimatedHours: 150,
+      actualHours: 0,
+      dependencies: ['task6']
+    }
+  ],
+
+  risks: [
+    {
+      id: 'risk1',
+      title: 'Business Central Integration Complexity',
+      description: 'Integration with Business Central may take longer than expected due to API limitations',
+      probability: 0.7,
+      impact: 'high',
+      riskLevel: 'high',
+      mitigation: 'Dedicated integration specialist assigned, fallback plan prepared',
+      owner: 'Technical Lead',
+      status: 'active'
+    },
+    {
+      id: 'risk2',
+      title: 'Resource Availability',
+      description: 'Key team members may not be available during critical phases',
+      probability: 0.4,
+      impact: 'medium',
+      riskLevel: 'medium',
+      mitigation: 'Cross-training initiated, backup resources identified',
+      owner: 'Project Manager',
+      status: 'monitoring'
+    },
+    {
+      id: 'risk3',
+      title: 'Scope Creep',
+      description: 'Additional feature requests from stakeholders may impact timeline',
+      probability: 0.6,
+      impact: 'medium',
+      riskLevel: 'medium',
+      mitigation: 'Change control process implemented, regular stakeholder communication',
+      owner: 'Product Manager',
+      status: 'active'
+    }
+  ],
+
+  resourceAllocation: [
+    {
+      phase: 'Architecture & Planning',
+      engineers: 3,
+      designers: 1,
+      pm: 1,
+      qa: 0,
+      devops: 0,
+      totalCost: 380000
+    },
+    {
+      phase: 'Core Development',
+      engineers: 5,
+      designers: 2,
+      pm: 1,
+      qa: 1,
+      devops: 1,
+      totalCost: 650000
+    },
+    {
+      phase: 'Integration & Testing',
+      engineers: 4,
+      designers: 1,
+      pm: 1,
+      qa: 2,
+      devops: 2,
+      totalCost: 150000
+    },
+    {
+      phase: 'Beta Launch & Optimization',
+      engineers: 3,
+      designers: 1,
+      pm: 1,
+      qa: 1,
+      devops: 1,
+      totalCost: 70000
+    }
+  ],
+
+  budgetTracking: {
+    totalBudget: 2500000,
+    spentToDate: 1250000,
+    remainingBudget: 1250000,
+    budgetUtilization: 50,
+    forecasted: 2450000,
+    variance: -50000,
+    byPhase: [
+      { phase: 'Architecture & Planning', budgeted: 400000, spent: 380000, variance: 20000 },
+      { phase: 'Core Development', budgeted: 800000, spent: 650000, variance: 150000 },
+      { phase: 'Integration & Testing', budgeted: 600000, spent: 150000, variance: 450000 },
+      { phase: 'Beta Launch & Optimization', budgeted: 700000, spent: 70000, variance: 630000 }
+    ]
+  },
+
+  teamVelocity: [
+    { sprint: 'Sprint 1', plannedPoints: 40, completedPoints: 38, velocity: 95 },
+    { sprint: 'Sprint 2', plannedPoints: 45, completedPoints: 44, velocity: 98 },
+    { sprint: 'Sprint 3', plannedPoints: 42, completedPoints: 39, velocity: 93 },
+    { sprint: 'Sprint 4', plannedPoints: 48, completedPoints: 47, velocity: 98 },
+    { sprint: 'Sprint 5', plannedPoints: 50, completedPoints: 46, velocity: 92 },
+    { sprint: 'Sprint 6', plannedPoints: 45, completedPoints: 43, velocity: 96 }
+  ]
+};
+
+// Progress Monitoring Dashboard Data
+export const progressMonitoringData = {
+  overallProgress: {
+    completionPercentage: 45,
+    onTimeDelivery: 87,
+    budgetAdherence: 98,
+    qualityScore: 92,
+    teamSatisfaction: 85,
+    stakeholderSatisfaction: 89
+  },
+
+  weeklyProgress: [
+    { week: 'Week 1', planned: 15, actual: 14, cumulative: 14 },
+    { week: 'Week 2', planned: 18, actual: 17, cumulative: 31 },
+    { week: 'Week 3', planned: 20, actual: 19, cumulative: 50 },
+    { week: 'Week 4', planned: 16, actual: 15, cumulative: 65 },
+    { week: 'Week 5', planned: 22, actual: 20, cumulative: 85 },
+    { week: 'Week 6', planned: 19, actual: 18, cumulative: 103 },
+    { week: 'Week 7', planned: 17, actual: 16, cumulative: 119 },
+    { week: 'Week 8', planned: 21, actual: 19, cumulative: 138 }
+  ],
+
+  sprintMetrics: [
+    {
+      sprint: 'Sprint 1',
+      startDate: '2024-01-01',
+      endDate: '2024-01-14',
+      plannedPoints: 40,
+      completedPoints: 38,
+      velocity: 95,
+      burndownTrend: [40, 35, 28, 22, 18, 12, 8, 4, 2, 0],
+      defects: 3,
+      blockers: 1,
+      teamMorale: 8.5
+    },
+    {
+      sprint: 'Sprint 2',
+      startDate: '2024-01-15',
+      endDate: '2024-01-28',
+      plannedPoints: 45,
+      completedPoints: 44,
+      velocity: 98,
+      burndownTrend: [45, 40, 34, 27, 21, 15, 10, 6, 3, 1],
+      defects: 2,
+      blockers: 0,
+      teamMorale: 9.0
+    },
+    {
+      sprint: 'Sprint 3',
+      startDate: '2024-01-29',
+      endDate: '2024-02-11',
+      plannedPoints: 42,
+      completedPoints: 39,
+      velocity: 93,
+      burndownTrend: [42, 38, 32, 28, 23, 18, 14, 9, 6, 3],
+      defects: 4,
+      blockers: 2,
+      teamMorale: 8.2
+    },
+    {
+      sprint: 'Sprint 4',
+      startDate: '2024-02-12',
+      endDate: '2024-02-25',
+      plannedPoints: 48,
+      completedPoints: 47,
+      velocity: 98,
+      burndownTrend: [48, 43, 37, 31, 25, 19, 13, 8, 4, 1],
+      defects: 1,
+      blockers: 0,
+      teamMorale: 9.2
+    },
+    {
+      sprint: 'Sprint 5',
+      startDate: '2024-02-26',
+      endDate: '2024-03-10',
+      plannedPoints: 50,
+      completedPoints: 46,
+      velocity: 92,
+      burndownTrend: [50, 45, 39, 34, 28, 22, 17, 12, 7, 4],
+      defects: 5,
+      blockers: 1,
+      teamMorale: 8.7
+    },
+    {
+      sprint: 'Sprint 6',
+      startDate: '2024-03-11',
+      endDate: '2024-03-24',
+      plannedPoints: 45,
+      completedPoints: 43,
+      velocity: 96,
+      burndownTrend: [45, 40, 35, 29, 24, 18, 13, 8, 4, 2],
+      defects: 2,
+      blockers: 0,
+      teamMorale: 8.9
+    }
+  ],
+
+  qualityMetrics: {
+    codeQuality: {
+      codeReviewScore: 4.2,
+      testCoverage: 87,
+      codeComplexity: 3.1,
+      technicalDebt: 12,
+      bugDensity: 0.8
+    },
+    defectTrends: [
+      { month: 'Jan', foundDefects: 8, resolvedDefects: 7, openDefects: 1 },
+      { month: 'Feb', foundDefects: 12, resolvedDefects: 11, openDefects: 2 },
+      { month: 'Mar', foundDefects: 9, resolvedDefects: 10, openDefects: 1 },
+      { month: 'Apr', foundDefects: 6, resolvedDefects: 7, openDefects: 0 },
+      { month: 'May', foundDefects: 5, resolvedDefects: 5, openDefects: 0 },
+      { month: 'Jun', foundDefects: 7, resolvedDefects: 6, openDefects: 1 }
+    ],
+    performanceMetrics: {
+      responseTime: 250,
+      throughput: 1200,
+      availability: 99.8,
+      errorRate: 0.12
+    }
+  },
+
+  resourceUtilization: [
+    { department: 'Engineering', planned: 100, actual: 95, efficiency: 95 },
+    { department: 'Design', planned: 80, actual: 85, efficiency: 106 },
+    { department: 'QA', planned: 60, actual: 58, efficiency: 97 },
+    { department: 'DevOps', planned: 40, actual: 42, efficiency: 105 },
+    { department: 'Product', planned: 50, actual: 48, efficiency: 96 }
+  ],
+
+  riskIndicators: [
+    {
+      category: 'Schedule',
+      current: 15,
+      threshold: 20,
+      trend: 'decreasing',
+      status: 'green'
+    },
+    {
+      category: 'Budget',
+      current: 5,
+      threshold: 15,
+      trend: 'stable',
+      status: 'green'
+    },
+    {
+      category: 'Quality',
+      current: 12,
+      threshold: 25,
+      trend: 'increasing',
+      status: 'yellow'
+    },
+    {
+      category: 'Resources',
+      current: 18,
+      threshold: 30,
+      trend: 'stable',
+      status: 'green'
+    },
+    {
+      category: 'Technical',
+      current: 22,
+      threshold: 35,
+      trend: 'decreasing',
+      status: 'green'
+    }
+  ],
+
+  blockers: [
+    {
+      id: 'blocker1',
+      title: 'API Rate Limiting Issues',
+      description: 'Business Central API has stricter rate limits than expected',
+      severity: 'high',
+      impact: 'Development velocity reduced by 20%',
+      owner: 'Backend Team',
+      createdDate: '2024-06-10',
+      estimatedResolution: '2024-06-20',
+      status: 'in_progress'
+    },
+    {
+      id: 'blocker2',
+      title: 'Design System Inconsistencies',
+      description: 'Component library needs standardization across modules',
+      severity: 'medium',
+      impact: 'UI consistency issues affecting user experience',
+      owner: 'Design Team',
+      createdDate: '2024-06-12',
+      estimatedResolution: '2024-06-18',
+      status: 'planned'
+    },
+    {
+      id: 'blocker3',
+      title: 'Environment Setup Delays',
+      description: 'Staging environment configuration taking longer than expected',
+      severity: 'medium',
+      impact: 'Testing delayed by 3 days',
+      owner: 'DevOps Team',
+      createdDate: '2024-06-08',
+      estimatedResolution: '2024-06-15',
+      status: 'resolved'
+    }
+  ],
+
+  teamPerformance: {
+    individualMetrics: [
+      {
+        name: 'Sarah Chen',
+        role: 'Product Manager',
+        tasksCompleted: 28,
+        tasksPlanned: 30,
+        efficiency: 93,
+        qualityScore: 4.5,
+        collaborationScore: 4.8
+      },
+      {
+        name: 'Michael Rodriguez',
+        role: 'Senior Engineer',
+        tasksCompleted: 35,
+        tasksPlanned: 38,
+        efficiency: 92,
+        qualityScore: 4.7,
+        collaborationScore: 4.6
+      },
+      {
+        name: 'Emily Johnson',
+        role: 'UI/UX Designer',
+        tasksCompleted: 22,
+        tasksPlanned: 24,
+        efficiency: 92,
+        qualityScore: 4.8,
+        collaborationScore: 4.9
+      },
+      {
+        name: 'David Kim',
+        role: 'QA Engineer',
+        tasksCompleted: 18,
+        tasksPlanned: 20,
+        efficiency: 90,
+        qualityScore: 4.6,
+        collaborationScore: 4.4
+      }
+    ],
+    teamHealth: {
+      velocity: 95,
+      predictability: 87,
+      focusFactor: 0.85,
+      happinessIndex: 4.6,
+      retentionRate: 100
+    }
+  },
+
+  stakeholderFeedback: [
+    {
+      stakeholder: 'Executive Team',
+      satisfaction: 4.2,
+      lastUpdate: '2024-06-10',
+      concerns: ['Timeline adherence', 'Budget management'],
+      positives: ['Quality delivery', 'Team performance']
+    },
+    {
+      stakeholder: 'Customer Success',
+      satisfaction: 4.5,
+      lastUpdate: '2024-06-12',
+      concerns: ['Feature completeness'],
+      positives: ['User experience', 'Performance improvements']
+    },
+    {
+      stakeholder: 'Sales Team',
+      satisfaction: 4.0,
+      lastUpdate: '2024-06-08',
+      concerns: ['Demo readiness', 'Competitive features'],
+      positives: ['Progress visibility', 'Regular updates']
+    }
+  ],
+
+  alerts: [
+    {
+      id: 'alert1',
+      type: 'warning',
+      title: 'Sprint Velocity Below Target',
+      message: 'Current sprint is tracking 8% below planned velocity',
+      severity: 'medium',
+      timestamp: '2024-06-15T10:30:00Z',
+      dismissed: false
+    },
+    {
+      id: 'alert2',
+      type: 'info',
+      title: 'Milestone Approaching',
+      message: 'Security Audit Complete milestone due in 5 days',
+      severity: 'low',
+      timestamp: '2024-06-15T09:15:00Z',
+      dismissed: false
+    },
+    {
+      id: 'alert3',
+      type: 'success',
+      title: 'Quality Gate Passed',
+      message: 'Code coverage threshold exceeded (87% vs 85% target)',
+      severity: 'low',
+      timestamp: '2024-06-14T16:45:00Z',
+      dismissed: true
+    }
+  ]
+};

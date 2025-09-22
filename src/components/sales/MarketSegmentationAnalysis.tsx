@@ -87,20 +87,39 @@ export default function MarketSegmentationAnalysis({ segments }: MarketSegmentat
                   <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                 ))}
               </Pie>
-              <Tooltip />
+              <Tooltip
+                formatter={(value: any, name: string) => [`${value}%`, 'Market Share']}
+                labelFormatter={(label) => label}
+              />
             </PieChart>
           </ResponsiveContainer>
         </div>
 
         <div>
           <h3 className="font-semibold text-secondary-900 mb-4">Revenue Opportunity by Segment</h3>
-          <ResponsiveContainer width="100%" height={300}>
-            <BarChart data={segments} layout="horizontal">
+          <ResponsiveContainer width="100%" height={400}>
+            <BarChart data={segments} margin={{ top: 20, right: 30, bottom: 80, left: 20 }}>
               <CartesianGrid strokeDasharray="3 3" />
-              <XAxis type="number" tickFormatter={(value) => `$${(value / 1000).toFixed(0)}K`} />
-              <YAxis type="category" dataKey="segment" width={100} />
-              <Tooltip formatter={(value: any) => [`$${value.toLocaleString()}`, 'Opportunity']} />
-              <Bar dataKey="opportunity" fill="#3b82f6" />
+              <XAxis
+                dataKey="segment"
+                angle={-45}
+                textAnchor="end"
+                height={80}
+                tick={{ fontSize: 11 }}
+              />
+              <YAxis
+                tickFormatter={(value) => `$${(value / 1000).toFixed(0)}K`}
+                domain={[0, 'dataMax + 20000']}
+              />
+              <Tooltip
+                formatter={(value: any) => [`$${Number(value).toLocaleString()}`, 'Revenue Opportunity']}
+                labelFormatter={(label) => `${label}`}
+              />
+              <Bar
+                dataKey="opportunity"
+                fill="#3b82f6"
+                radius={[4, 4, 0, 0]}
+              />
             </BarChart>
           </ResponsiveContainer>
         </div>

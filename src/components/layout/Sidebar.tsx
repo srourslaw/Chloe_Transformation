@@ -86,7 +86,7 @@ export default function Sidebar() {
     <aside className="w-64 border-r border-secondary-200 bg-white">
       <div className="flex h-full flex-col">
         <div className="flex-1 overflow-y-auto p-4">
-          <nav className="space-y-2">
+          <nav className="space-y-2 pt-12">
             {navigationItems.map((item) => {
               const isActive = location.pathname === item.href;
 

@@ -69,9 +69,9 @@ export default function MarketPositioningChart({ data }: MarketPositioningChartP
 
       <div className="flex flex-col lg:flex-row items-center gap-6">
         {/* Radar Chart */}
-        <div className="h-80 w-full lg:w-2/3">
+        <div className="h-96 w-full lg:w-3/4">
           <ResponsiveContainer width="100%" height="100%">
-            <RadarChart data={radarData} margin={{ top: 20, right: 30, bottom: 20, left: 30 }}>
+            <RadarChart data={radarData} margin={{ top: 30, right: 40, bottom: 30, left: 40 }}>
               <PolarGrid stroke="#e5e7eb" />
               <PolarAngleAxis
                 dataKey="axis"
@@ -104,7 +104,7 @@ export default function MarketPositioningChart({ data }: MarketPositioningChartP
         </div>
 
         {/* Competitive Scores */}
-        <div className="w-full lg:w-1/3 space-y-4">
+        <div className="w-full lg:w-1/4 space-y-4">
           <h3 className="font-medium text-secondary-900">Competitive Scores</h3>
           {data.map((company, index) => {
             const avgScore = Math.round(

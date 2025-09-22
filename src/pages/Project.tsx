@@ -1,17 +1,20 @@
-import Card from '@/components/ui/Card';
+import ProjectTimelineDashboard from '../components/project/ProjectTimelineDashboard';
+import MilestoneTracking from '../components/project/MilestoneTracking';
+import ProgressMonitoringDashboard from '../components/project/ProgressMonitoringDashboard';
 
 export default function Project() {
   return (
-    <div className="space-y-6">
-      <h1 className="text-3xl font-bold text-secondary-900">Timeline & Milestones</h1>
-      <Card>
-        <h2 className="mb-4 text-xl font-semibold text-secondary-900">
-          Project Timeline
-        </h2>
-        <p className="text-secondary-600">
-          Master project timeline, sprint planning, and milestone tracking.
+    <div className="space-y-8">
+      <div>
+        <h1 className="text-3xl font-bold text-secondary-900 mb-2">Project Management Dashboard</h1>
+        <p className="text-lg text-secondary-600">
+          Comprehensive project tracking including timeline, milestones, progress monitoring, and team performance
         </p>
-      </Card>
+      </div>
+
+      <ProgressMonitoringDashboard />
+      <ProjectTimelineDashboard />
+      <MilestoneTracking />
     </div>
   );
 }
