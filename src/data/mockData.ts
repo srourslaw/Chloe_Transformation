@@ -399,6 +399,189 @@ export const productModules = {
   ]
 };
 
+// Feature Prioritization Matrix Data
+export const featurePrioritizationData = [
+  {
+    name: 'Multi-tenant Architecture',
+    effort: 9,
+    impact: 10,
+    size: 120,
+    category: 'Platform',
+    description: 'Core multi-tenant foundation enabling scalable SaaS delivery',
+    color: '#3b82f6'
+  },
+  {
+    name: 'Inventory Management',
+    effort: 6,
+    impact: 9,
+    size: 90,
+    category: 'Core Features',
+    description: 'Real-time inventory tracking and automated reordering',
+    color: '#10b981'
+  },
+  {
+    name: 'Reporting Dashboard',
+    effort: 3,
+    impact: 7,
+    size: 60,
+    category: 'Analytics',
+    description: 'Business intelligence and performance metrics',
+    color: '#f59e0b'
+  },
+  {
+    name: 'Mobile App',
+    effort: 8,
+    impact: 6,
+    size: 75,
+    category: 'User Experience',
+    description: 'Native mobile application for on-the-go management',
+    color: '#ef4444'
+  },
+  {
+    name: 'API Management',
+    effort: 5,
+    impact: 8,
+    size: 70,
+    category: 'Integration',
+    description: 'Comprehensive API layer for third-party integrations',
+    color: '#8b5cf6'
+  },
+  {
+    name: 'Advanced Analytics',
+    effort: 7,
+    impact: 5,
+    size: 55,
+    category: 'Analytics',
+    description: 'Machine learning powered business insights',
+    color: '#06b6d4'
+  },
+  {
+    name: 'User Management',
+    effort: 4,
+    impact: 8,
+    size: 65,
+    category: 'Platform',
+    description: 'Role-based access control and tenant administration',
+    color: '#84cc16'
+  }
+];
+
+// Development Sprint Planning Data
+export const sprintPlanningData = [
+  {
+    sprint: 'Sprint 1',
+    duration: 'Weeks 1-2',
+    features: ['Multi-tenant Architecture Design', 'Database Schema Planning'],
+    progress: 85,
+    status: 'completed',
+    teamCapacity: 100,
+    storyPoints: 34
+  },
+  {
+    sprint: 'Sprint 2',
+    duration: 'Weeks 3-4',
+    features: ['Core Platform Development', 'Authentication System'],
+    progress: 60,
+    status: 'in_progress',
+    teamCapacity: 95,
+    storyPoints: 42
+  },
+  {
+    sprint: 'Sprint 3',
+    duration: 'Weeks 5-6',
+    features: ['User Management', 'Basic Inventory Module'],
+    progress: 20,
+    status: 'planned',
+    teamCapacity: 100,
+    storyPoints: 38
+  },
+  {
+    sprint: 'Sprint 4',
+    duration: 'Weeks 7-8',
+    features: ['API Development', 'Integration Framework'],
+    progress: 0,
+    status: 'planned',
+    teamCapacity: 90,
+    storyPoints: 45
+  },
+  {
+    sprint: 'Sprint 5',
+    duration: 'Weeks 9-10',
+    features: ['Reporting Dashboard', 'Analytics Foundation'],
+    progress: 0,
+    status: 'planned',
+    teamCapacity: 100,
+    storyPoints: 35
+  },
+  {
+    sprint: 'Sprint 6',
+    duration: 'Weeks 11-12',
+    features: ['Mobile App MVP', 'Performance Optimization'],
+    progress: 0,
+    status: 'planned',
+    teamCapacity: 85,
+    storyPoints: 40
+  }
+];
+
+// Integration Complexity Heat Map Data
+export const integrationComplexityData = [
+  {
+    integration: 'Microsoft Business Central',
+    complexity: 'high',
+    timeEstimate: '6-8 weeks',
+    priority: 'critical',
+    status: 'in_progress',
+    dependencies: ['Authentication', 'API Framework'],
+    riskLevel: 'medium'
+  },
+  {
+    integration: 'Payment Processors',
+    complexity: 'medium',
+    timeEstimate: '3-4 weeks',
+    priority: 'high',
+    status: 'planned',
+    dependencies: ['Security Framework'],
+    riskLevel: 'low'
+  },
+  {
+    integration: 'Inventory Systems',
+    complexity: 'medium',
+    timeEstimate: '4-5 weeks',
+    priority: 'high',
+    status: 'planned',
+    dependencies: ['Core Platform', 'API Framework'],
+    riskLevel: 'medium'
+  },
+  {
+    integration: 'Email/SMS Services',
+    complexity: 'low',
+    timeEstimate: '1-2 weeks',
+    priority: 'medium',
+    status: 'planned',
+    dependencies: ['User Management'],
+    riskLevel: 'low'
+  },
+  {
+    integration: 'Analytics Tools',
+    complexity: 'medium',
+    timeEstimate: '2-3 weeks',
+    priority: 'medium',
+    status: 'planned',
+    dependencies: ['Reporting Dashboard'],
+    riskLevel: 'low'
+  },
+  {
+    integration: 'Backup Services',
+    complexity: 'low',
+    timeEstimate: '1-2 weeks',
+    priority: 'low',
+    status: 'planned',
+    dependencies: ['Core Platform'],
+    riskLevel: 'low'
+  }
+];
+
 // Technical Transformation Roadmap Data
 export const technicalRoadmap = [
   {

@@ -1,7 +1,17 @@
-import { currentVsFutureState, productModules, technicalRoadmap } from '@/data/mockData';
+import {
+  currentVsFutureState,
+  productModules,
+  technicalRoadmap,
+  featurePrioritizationData,
+  sprintPlanningData,
+  integrationComplexityData
+} from '@/data/mockData';
 import CurrentVsFutureState from '@/components/strategy/CurrentVsFutureState';
 import ProductArchitecture from '@/components/strategy/ProductArchitecture';
 import TechnicalRoadmap from '@/components/strategy/TechnicalRoadmap';
+import FeaturePrioritizationMatrix from '@/components/strategy/FeaturePrioritizationMatrix';
+import DevelopmentSprintPlanning from '@/components/strategy/DevelopmentSprintPlanning';
+import IntegrationComplexityHeatMap from '@/components/strategy/IntegrationComplexityHeatMap';
 
 export default function Strategy() {
   return (
@@ -28,6 +38,15 @@ export default function Strategy() {
 
       {/* Technical Transformation Roadmap */}
       <TechnicalRoadmap phases={technicalRoadmap} />
+
+      {/* Feature Prioritization Matrix */}
+      <FeaturePrioritizationMatrix features={featurePrioritizationData} />
+
+      {/* Development Sprint Planning */}
+      <DevelopmentSprintPlanning sprints={sprintPlanningData} />
+
+      {/* Integration Complexity Heat Map */}
+      <IntegrationComplexityHeatMap integrations={integrationComplexityData} />
     </div>
   );
 }
