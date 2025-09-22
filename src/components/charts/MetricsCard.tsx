@@ -1,0 +1,1 @@
+// MetricsCard component - Card for displaying key metrics

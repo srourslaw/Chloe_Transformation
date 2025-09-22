@@ -1,0 +1,1 @@
+// MainLayout component - Main layout wrapper combining header and sidebar

@@ -1,0 +1,1 @@
+// ProductStrategy component - Product transformation details

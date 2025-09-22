@@ -1,0 +1,1 @@
+// SalesMarketing component - Go-to-market strategy
