@@ -1,7 +1,11 @@
-import { Download, Calendar, Settings, FileText, FileSpreadsheet, Presentation } from 'lucide-react';
+import { Download, Calendar, Settings, FileText, FileSpreadsheet, Presentation, Menu } from 'lucide-react';
 import { format } from 'date-fns';
 
-export default function Header() {
+interface HeaderProps {
+  onMenuClick: () => void;
+}
+
+export default function Header({ onMenuClick }: HeaderProps) {
   const today = new Date();
 
   const handleExport = (type: 'pdf' | 'excel' | 'powerpoint') => {
@@ -89,24 +93,34 @@ Contact: Chloe Transformation Team`;
     <header className="border-b border-secondary-200 bg-white px-6 py-4">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-4">
-          <h1 className="text-2xl font-bold text-gradient">
+          {/* Mobile menu button */}
+          <button
+            onClick={onMenuClick}
+            className="lg:hidden p-2 rounded-lg hover:bg-secondary-100 transition-colors"
+            title="Open menu"
+          >
+            <Menu className="h-5 w-5" />
+          </button>
+
+          <h1 className="text-xl lg:text-2xl font-bold text-gradient">
             Chloe Transformation Dashboard
           </h1>
-          <div className="flex items-center gap-2 text-sm text-secondary-600">
+          <div className="hidden sm:flex items-center gap-2 text-sm text-secondary-600">
             <Calendar className="h-4 w-4" />
-            <span>{format(today, 'EEEE, MMMM d, yyyy')}</span>
+            <span className="hidden md:inline">{format(today, 'EEEE, MMMM d, yyyy')}</span>
+            <span className="md:hidden">{format(today, 'MMM d, yyyy')}</span>
           </div>
         </div>
 
         <div className="flex items-center gap-3">
-          <div className="flex items-center gap-2">
+          <div className="hidden sm:flex items-center gap-2">
             <button
               onClick={() => handleExport('pdf')}
               className="btn btn-outline px-3 py-2 text-xs"
               title="Export as PDF"
             >
               <Download className="h-4 w-4" />
-              PDF
+              <span className="hidden lg:inline">PDF</span>
             </button>
             <button
               onClick={() => handleExport('excel')}
@@ -114,7 +128,7 @@ Contact: Chloe Transformation Team`;
               title="Export as Excel"
             >
               <Download className="h-4 w-4" />
-              Excel
+              <span className="hidden lg:inline">Excel</span>
             </button>
             <button
               onClick={() => handleExport('powerpoint')}
@@ -122,11 +136,11 @@ Contact: Chloe Transformation Team`;
               title="Export as PowerPoint"
             >
               <Download className="h-4 w-4" />
-              PPT
+              <span className="hidden lg:inline">PPT</span>
             </button>
           </div>
 
-          <div className="h-6 w-px bg-secondary-200" />
+          <div className="hidden sm:block h-6 w-px bg-secondary-200" />
 
           <button
             onClick={handleSettings}
