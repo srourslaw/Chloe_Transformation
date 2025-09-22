@@ -582,6 +582,409 @@ export const integrationComplexityData = [
   }
 ];
 
+// Organizational Chart Data
+export const organizationalChart = {
+  ceo: {
+    id: 'ceo',
+    name: 'Sarah Chen',
+    role: 'CEO & Founder',
+    department: 'Executive',
+    status: 'hired',
+    email: 'sarah@chloe.com',
+    experience: '12 years',
+    skills: ['Leadership', 'Strategy', 'Fundraising'],
+    reports: ['product-head', 'engineering-head', 'sales-head', 'operations-head']
+  },
+  departments: [
+    {
+      head: {
+        id: 'product-head',
+        name: 'Michael Rodriguez',
+        role: 'VP of Product',
+        department: 'Product',
+        status: 'hired',
+        email: 'michael@chloe.com',
+        experience: '8 years',
+        skills: ['Product Strategy', 'UX/UI', 'Analytics'],
+        reports: ['pm-1', 'designer-1']
+      },
+      members: [
+        {
+          id: 'pm-1',
+          name: 'Emily Johnson',
+          role: 'Senior Product Manager',
+          department: 'Product',
+          status: 'hired',
+          email: 'emily@chloe.com',
+          experience: '5 years',
+          skills: ['Product Management', 'User Research', 'Data Analysis'],
+          reports: []
+        },
+        {
+          id: 'designer-1',
+          name: 'Alex Kim',
+          role: 'UX/UI Designer',
+          department: 'Product',
+          status: 'interviewing',
+          email: 'alex@chloe.com',
+          experience: '4 years',
+          skills: ['UI/UX Design', 'Prototyping', 'User Testing'],
+          reports: []
+        }
+      ]
+    },
+    {
+      head: {
+        id: 'engineering-head',
+        name: 'David Zhang',
+        role: 'VP of Engineering',
+        department: 'Engineering',
+        status: 'hired',
+        email: 'david@chloe.com',
+        experience: '10 years',
+        skills: ['System Architecture', 'Team Leadership', 'Cloud Infrastructure'],
+        reports: ['senior-dev-1', 'senior-dev-2', 'dev-1']
+      },
+      members: [
+        {
+          id: 'senior-dev-1',
+          name: 'Jessica Williams',
+          role: 'Senior Full-Stack Developer',
+          department: 'Engineering',
+          status: 'hired',
+          email: 'jessica@chloe.com',
+          experience: '7 years',
+          skills: ['React', 'Node.js', 'Azure', 'TypeScript'],
+          reports: []
+        },
+        {
+          id: 'senior-dev-2',
+          name: 'Marcus Thompson',
+          role: 'Senior Backend Developer',
+          department: 'Engineering',
+          status: 'hired',
+          email: 'marcus@chloe.com',
+          experience: '6 years',
+          skills: ['.NET Core', 'SQL Server', 'Microservices', 'Docker'],
+          reports: []
+        },
+        {
+          id: 'dev-1',
+          name: 'Lisa Garcia',
+          role: 'Frontend Developer',
+          department: 'Engineering',
+          status: 'offer_made',
+          email: 'lisa@chloe.com',
+          experience: '3 years',
+          skills: ['React', 'TypeScript', 'CSS', 'Testing'],
+          reports: []
+        }
+      ]
+    },
+    {
+      head: {
+        id: 'sales-head',
+        name: 'Robert Johnson',
+        role: 'VP of Sales & Marketing',
+        department: 'Sales',
+        status: 'hired',
+        email: 'robert@chloe.com',
+        experience: '9 years',
+        skills: ['B2B Sales', 'Marketing Strategy', 'Customer Success'],
+        reports: ['sales-1', 'marketing-1']
+      },
+      members: [
+        {
+          id: 'sales-1',
+          name: 'Amanda Davis',
+          role: 'Senior Sales Manager',
+          department: 'Sales',
+          status: 'sourcing',
+          email: 'amanda@chloe.com',
+          experience: '5 years',
+          skills: ['Enterprise Sales', 'Relationship Building', 'CRM'],
+          reports: []
+        },
+        {
+          id: 'marketing-1',
+          name: 'Thomas Wilson',
+          role: 'Marketing Manager',
+          department: 'Sales',
+          status: 'sourcing',
+          email: 'thomas@chloe.com',
+          experience: '4 years',
+          skills: ['Digital Marketing', 'Content Strategy', 'Analytics'],
+          reports: []
+        }
+      ]
+    },
+    {
+      head: {
+        id: 'operations-head',
+        name: 'Jennifer Lee',
+        role: 'VP of Operations',
+        department: 'Operations',
+        status: 'hired',
+        email: 'jennifer@chloe.com',
+        experience: '8 years',
+        skills: ['Operations Management', 'Finance', 'HR'],
+        reports: ['finance-1']
+      },
+      members: [
+        {
+          id: 'finance-1',
+          name: 'Kevin Brown',
+          role: 'Finance Manager',
+          department: 'Operations',
+          status: 'interviewing',
+          email: 'kevin@chloe.com',
+          experience: '6 years',
+          skills: ['Financial Planning', 'Accounting', 'Budgeting'],
+          reports: []
+        }
+      ]
+    }
+  ]
+};
+
+// Team Hiring Timeline Data
+export const teamHiringTimeline = [
+  {
+    position: 'UX/UI Designer',
+    department: 'Product',
+    priority: 'high',
+    status: 'interviewing',
+    startWeek: 1,
+    endWeek: 3,
+    progress: 70,
+    candidates: 3
+  },
+  {
+    position: 'Frontend Developer',
+    department: 'Engineering',
+    priority: 'high',
+    status: 'offer_made',
+    startWeek: 2,
+    endWeek: 4,
+    progress: 90,
+    candidates: 1
+  },
+  {
+    position: 'Senior Sales Manager',
+    department: 'Sales',
+    priority: 'critical',
+    status: 'sourcing',
+    startWeek: 3,
+    endWeek: 7,
+    progress: 20,
+    candidates: 0
+  },
+  {
+    position: 'Marketing Manager',
+    department: 'Sales',
+    priority: 'medium',
+    status: 'sourcing',
+    startWeek: 4,
+    endWeek: 8,
+    progress: 15,
+    candidates: 2
+  },
+  {
+    position: 'Finance Manager',
+    department: 'Operations',
+    priority: 'medium',
+    status: 'interviewing',
+    startWeek: 5,
+    endWeek: 8,
+    progress: 60,
+    candidates: 4
+  },
+  {
+    position: 'DevOps Engineer',
+    department: 'Engineering',
+    priority: 'medium',
+    status: 'not_started',
+    startWeek: 8,
+    endWeek: 12,
+    progress: 0,
+    candidates: 0
+  },
+  {
+    position: 'Customer Success Manager',
+    department: 'Sales',
+    priority: 'medium',
+    status: 'not_started',
+    startWeek: 10,
+    endWeek: 14,
+    progress: 0,
+    candidates: 0
+  }
+];
+
+// Skills Matrix Data
+export const skillsMatrix = {
+  requiredSkills: [
+    'React', 'TypeScript', '.NET Core', 'SQL Server', 'Azure', 'Node.js',
+    'UI/UX Design', 'Product Management', 'Sales', 'Marketing', 'Finance',
+    'DevOps', 'Testing', 'API Development', 'Microservices', 'Docker'
+  ],
+  currentTeam: [
+    {
+      name: 'Sarah Chen',
+      role: 'CEO & Founder',
+      skills: {
+        'React': 0, 'TypeScript': 0, '.NET Core': 0, 'SQL Server': 0, 'Azure': 2,
+        'Node.js': 0, 'UI/UX Design': 2, 'Product Management': 4, 'Sales': 4,
+        'Marketing': 3, 'Finance': 3, 'DevOps': 0, 'Testing': 0, 'API Development': 0,
+        'Microservices': 0, 'Docker': 0
+      }
+    },
+    {
+      name: 'Michael Rodriguez',
+      role: 'VP of Product',
+      skills: {
+        'React': 3, 'TypeScript': 2, '.NET Core': 0, 'SQL Server': 1, 'Azure': 2,
+        'Node.js': 2, 'UI/UX Design': 4, 'Product Management': 5, 'Sales': 2,
+        'Marketing': 3, 'Finance': 1, 'DevOps': 0, 'Testing': 3, 'API Development': 2,
+        'Microservices': 1, 'Docker': 0
+      }
+    },
+    {
+      name: 'David Zhang',
+      role: 'VP of Engineering',
+      skills: {
+        'React': 3, 'TypeScript': 4, '.NET Core': 4, 'SQL Server': 4, 'Azure': 5,
+        'Node.js': 4, 'UI/UX Design': 1, 'Product Management': 2, 'Sales': 1,
+        'Marketing': 1, 'Finance': 1, 'DevOps': 5, 'Testing': 4, 'API Development': 5,
+        'Microservices': 5, 'Docker': 5
+      }
+    },
+    {
+      name: 'Jessica Williams',
+      role: 'Senior Full-Stack Developer',
+      skills: {
+        'React': 5, 'TypeScript': 4, '.NET Core': 3, 'SQL Server': 3, 'Azure': 4,
+        'Node.js': 4, 'UI/UX Design': 2, 'Product Management': 1, 'Sales': 0,
+        'Marketing': 0, 'Finance': 0, 'DevOps': 2, 'Testing': 4, 'API Development': 4,
+        'Microservices': 3, 'Docker': 2
+      }
+    },
+    {
+      name: 'Marcus Thompson',
+      role: 'Senior Backend Developer',
+      skills: {
+        'React': 2, 'TypeScript': 3, '.NET Core': 5, 'SQL Server': 5, 'Azure': 4,
+        'Node.js': 3, 'UI/UX Design': 0, 'Product Management': 1, 'Sales': 0,
+        'Marketing': 0, 'Finance': 0, 'DevOps': 4, 'Testing': 4, 'API Development': 5,
+        'Microservices': 5, 'Docker': 4
+      }
+    },
+    {
+      name: 'Robert Johnson',
+      role: 'VP of Sales & Marketing',
+      skills: {
+        'React': 0, 'TypeScript': 0, '.NET Core': 0, 'SQL Server': 1, 'Azure': 1,
+        'Node.js': 0, 'UI/UX Design': 2, 'Product Management': 3, 'Sales': 5,
+        'Marketing': 5, 'Finance': 2, 'DevOps': 0, 'Testing': 0, 'API Development': 0,
+        'Microservices': 0, 'Docker': 0
+      }
+    },
+    {
+      name: 'Jennifer Lee',
+      role: 'VP of Operations',
+      skills: {
+        'React': 0, 'TypeScript': 0, '.NET Core': 0, 'SQL Server': 2, 'Azure': 1,
+        'Node.js': 0, 'UI/UX Design': 1, 'Product Management': 2, 'Sales': 2,
+        'Marketing': 2, 'Finance': 5, 'DevOps': 0, 'Testing': 0, 'API Development': 0,
+        'Microservices': 0, 'Docker': 0
+      }
+    }
+  ],
+  skillGaps: [
+    { skill: 'DevOps', currentLevel: 3.1, requiredLevel: 4, gap: 0.9, priority: 'high' },
+    { skill: 'UI/UX Design', currentLevel: 1.7, requiredLevel: 4, gap: 2.3, priority: 'critical' },
+    { skill: 'Sales', currentLevel: 2.0, requiredLevel: 4, gap: 2.0, priority: 'high' },
+    { skill: 'Marketing', currentLevel: 2.1, requiredLevel: 4, gap: 1.9, priority: 'high' },
+    { skill: 'Testing', currentLevel: 2.1, requiredLevel: 4, gap: 1.9, priority: 'medium' },
+    { skill: 'Docker', currentLevel: 1.6, requiredLevel: 3, gap: 1.4, priority: 'medium' }
+  ]
+};
+
+// Team Capacity Planning Data
+export const teamCapacityPlanning = {
+  phases: [
+    {
+      phase: 'Phase 1: Architecture',
+      weeks: '1-8',
+      totalCapacity: 320, // 8 people * 40 hours * 8 weeks / 8
+      allocations: [
+        { department: 'Engineering', hours: 240, percentage: 75 },
+        { department: 'Product', hours: 60, percentage: 18.75 },
+        { department: 'Operations', hours: 20, percentage: 6.25 }
+      ],
+      utilization: 85,
+      bottlenecks: ['Senior Engineering capacity']
+    },
+    {
+      phase: 'Phase 2: Core Development',
+      weeks: '9-20',
+      totalCapacity: 480,
+      allocations: [
+        { department: 'Engineering', hours: 360, percentage: 75 },
+        { department: 'Product', hours: 80, percentage: 16.67 },
+        { department: 'Sales', hours: 40, percentage: 8.33 }
+      ],
+      utilization: 95,
+      bottlenecks: ['Frontend development', 'Testing resources']
+    },
+    {
+      phase: 'Phase 3: Integration',
+      weeks: '21-28',
+      totalCapacity: 320,
+      allocations: [
+        { department: 'Engineering', hours: 200, percentage: 62.5 },
+        { department: 'Product', hours: 80, percentage: 25 },
+        { department: 'Sales', hours: 40, percentage: 12.5 }
+      ],
+      utilization: 90,
+      bottlenecks: ['Business Central expertise']
+    },
+    {
+      phase: 'Phase 4: Launch',
+      weeks: '29-40',
+      totalCapacity: 480,
+      allocations: [
+        { department: 'Sales', hours: 200, percentage: 41.67 },
+        { department: 'Engineering', hours: 160, percentage: 33.33 },
+        { department: 'Product', hours: 80, percentage: 16.67 },
+        { department: 'Operations', hours: 40, percentage: 8.33 }
+      ],
+      utilization: 88,
+      bottlenecks: ['Sales team capacity', 'Customer support']
+    }
+  ],
+  resourceConflicts: [
+    {
+      resource: 'Senior Engineering',
+      conflict: 'Overallocated in Phase 2',
+      impact: 'high',
+      resolution: 'Hire additional senior developer or extend timeline'
+    },
+    {
+      resource: 'Product Management',
+      conflict: 'Split between feature development and customer onboarding',
+      impact: 'medium',
+      resolution: 'Hire customer success manager'
+    },
+    {
+      resource: 'DevOps',
+      conflict: 'Missing expertise for scaling infrastructure',
+      impact: 'high',
+      resolution: 'Hire DevOps engineer before Phase 3'
+    }
+  ]
+};
+
 // Technical Transformation Roadmap Data
 export const technicalRoadmap = [
   {
